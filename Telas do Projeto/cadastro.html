@@ -15,9 +15,9 @@
         <a href="Tela-Inicio.html"><img src="logo.png" alt="Logo da marca." class="cabecalho-logo"></a>
         <nav class="cabecalho-menu">
             <a class="cabecalho-menu-item" href="Tela-Inicio.html">Início</a>
-            <a class="cabecalho-menu-item" href="Tela-Inicio.html#p2">A 2ense</a>
+            <a class="cabecalho-menu-item" href="Tela-Inicio.html#p2">A FanPageBR UCL</a>
             <a class="cabecalho-menu-item" href="Tela-Inicio.html#p3">Contato</a>
-            <a class="cabecalho-menu-item" href="login.html">Login</a>
+            <a class="cabecalho-menu-item" href="cadastro.html">Cadastro</a>
         </nav>
     </header>
     <center>
@@ -48,14 +48,7 @@
                                 <div class="inputForm">
                                     <label for="senha">Confirmar Senha</label>
                                     <input placeholder="**********" type="password" name="senha" id="in_confsenha"
-                                        class="inputUser" maxlength="10" size="10" required><input class="mostrarsenha"
-                                        type="checkbox" onclick="mostrarOcultarSenha()">
-                                    Exibir Senha
-                                </div>
-                                <div class="inputForm">
-                                    <label for="senha">Credencial de Validação</label>
-                                    <input placeholder="Ex:202123210" type="password" name="senha" id="in_credencial"
-                                        class="inputUser" required>
+                                        class="inputUser" maxlength="10" size="10" required>
                                 </div>
 
                                 <a class="botaocad" href="login.html"><b>Já tem uma conta? Faça o Login.</b></a>
@@ -76,12 +69,12 @@
                 <p class="rodape-conteudo-titulo">Fale Conosco</p>
                 <div class="rodape-conteudo-barra"></div>
                 <a class="rodape-conteudo-ancora" href="Tela-Inicio.html#p3">Contato</a>
-                <a class="rodape-conteudo-ancora" href="Tela-Inicio.html#p3">0800 303 2022</a>
+                <a class="rodape-conteudo-ancora" href="Tela-Inicio.html#p3">0800 011 2022</a>
             </div>
 
             <div class="rodape-conteudo-imagem">
                 <a href="Tela-Inicio.html"><img class="rodape-imagem" src="logo.png"></a>
-                <p class="rodape-direito">© 2022 Todos os direitos reservados | 2ense.</p>
+                <p class="rodape-direito">© 2022 Todos os direitos reservados | FanPageBR Champions League.</p>
             </div>
 
             <div class="rodape-conteudo-sessao">
@@ -112,32 +105,16 @@
         emailcd = in_email.value
         senhacd = in_senha.value
         confsenhacd = in_confsenha.value
-        credencialcd = in_credencial.value
 
-        if (nomecd == "" || senhacd == "" || credencialcd == "" || confsenhacd == "" || emailcd == "") {
+        if (nomecd == "" || emailcd == "" || senhacd == "" || confsenhacd == "") {
             alert("Por gentileza, preencher todos os campos!")
         } else {
             if (confsenhacd == senhacd) {
-                if (credencialcd == credencial) {
-                    alert("Cadastro efetuado com sucesso.")
-                    window.open("login.html")
-                } else {
-                    alert("Credencial Inválida, entre em contato com nossa equipe, por gentileza.")
-                }
+            alert("Parabéns, Cadastro Efetuado com Sucesso :)!")
             } else {
                 alert('Senha não confere!')
             }
         }
     }
 
-    function mostrarOcultarSenha() {
-        var in_senha = document.getElementById("in_senha", "in_confsenha");
-        if ((in_senha.type == "password") && (in_confsenha.type == "password")) {
-            in_senha.type = "text";
-            in_confsenha.type = "text;"
-        } else {
-            in_senha.type = "password";
-            in_confsenha.type = "password";
-        }
-    }
 </script>
