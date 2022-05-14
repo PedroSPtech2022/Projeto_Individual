@@ -9,13 +9,14 @@
     text-decoration: none;
 }
 
+
 body {
     font-size: 100%;
-    background: linear-gradient(68.15deg, #ee7752, #e73c7e, rgb(130, 10, 209), #d523d5) no-repeat;
+    background: linear-gradient(68.15deg,rgba(14, 29, 91, 1),rgba(8, 20, 66, 1),rgba(52, 98, 165, 1),rgba(100, 147, 191, 1),rgba(11, 11, 11, 1)) no-repeat;
+    opacity: 1.0;
     background-size: 300% 300%;
     animation: gradient 10s ease alternate infinite;
 }
-
 
 @keyframes gradient {
     0% {
