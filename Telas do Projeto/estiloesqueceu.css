@@ -9,27 +9,12 @@
     text-decoration: none;
 }
 
-body {
-    font-size: 100%;
-    background: linear-gradient(68.15deg,rgba(14, 29, 91, 1),rgba(8, 20, 66, 1),rgba(52, 98, 165, 1),rgba(100, 147, 191, 1),rgba(11, 11, 11, 1)) no-repeat;
-    opacity: 1.0;
-    background-size: 300% 300%;
-    animation: gradient 10s ease alternate infinite;
+
+body{
+    background-image: url(bola.jpg);
+    background-size: 100%;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
-}
 
 .conteudo {
     height: 100vh;
@@ -43,7 +28,7 @@ body {
     padding: 15px;
     background-color: #00000073;
     height: 12vh;
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
@@ -102,23 +87,6 @@ body {
     opacity: 1;
 }
 
-@keyframes transicao {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.transicao {
-    animation: transicao 2s;
-    animation-timing-function: ease-in-out;
-}
-
 .conteudo-terciario {
     margin-top: 25vh;
     padding: 50px;
@@ -170,7 +138,7 @@ legend {
     padding: 10px;
     text-align: center;
     background: rgb(255, 255, 255);
-    color: rgb(130, 10, 209);
+    color:  rgba(52, 98, 165, 1);
     border-radius: 8px;
     letter-spacing: 2px;
 
@@ -206,7 +174,7 @@ legend {
 
 .submit:hover {
     background: rgb(255, 255, 255);
-    color: rgb(130, 10, 209);
+    color:  rgba(52, 98, 165, 1);
 }
 
 

@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Um sistema que permite analise em tempo real da frequencia de pessoas!">
-    <title>Login - 2ense</title>
+    <meta name="description" content="Página de Fan para a UCL">
+    <title>Esqueceu a Senha - FanPageBR UCL</title>
     <link rel="stylesheet" href="estiloesqueceu.css">
-    <link rel="shortcut icon" type="imagex/png" href="logo.ico">
+    <link rel="shortcut icon" type="imagex/png" href="UCL.png">
 </head>
 
 <body>
     <header class="cabecalho">
-        <a href="Tela-Inicio.html"><img src="logo.png" alt="Logo da marca." class="cabecalho-logo"></a>
+        <a href="Tela-Inicio.html"><img src="UCL.png" alt="Logo da marca." class="cabecalho-logo"></a>
         <nav class="cabecalho-menu">
-            <a class="cabecalho-menu-item" href="Tela-Inicio.html">Início</a>
-            <a class="cabecalho-menu-item" href="Tela-Inicio.html#p2">A 2ense</a>
-            <a class="cabecalho-menu-item" href="Tela-Inicio.html#p3">Contato</a>
+            <a class="cabecalho-menu-item" href="home.html">Início</a>
+            <a class="cabecalho-menu-item" href="home.html">A FanPageBR UCL</a>
+            <a class="cabecalho-menu-item" href="contato.html">Contato</a>
             <a class="cabecalho-menu-item" href="login.html">Login</a>
         </nav>
     </header>
@@ -26,7 +26,7 @@
                 <div class="formulario"></div>
                 <div class="estilo-formulario" id="div1">
                     <fieldset class="estilo-formulario-caixa">
-                        <legend>Recupere sua Senha 2ENSE</legend>
+                        <legend>Recupere sua Senha Jogador</legend>
                         <br>
                         <div class="inputForm">
                             <label for="email" class="labelInput">Email</label></label>
@@ -48,13 +48,13 @@
             <div class="rodape-conteudo-sessao">
                 <p class="rodape-conteudo-titulo">Fale Conosco</p>
                 <div class="rodape-conteudo-barra"></div>
-                <a class="rodape-conteudo-ancora" href="Tela-Inicio.html#p3">Contato</a>
+                <a class="rodape-conteudo-ancora" href="contato.html">Contato</a>
                 <a class="rodape-conteudo-ancora" href="Tela-Inicio.html#p3">0800 303 2022</a>
             </div>
 
             <div class="rodape-conteudo-imagem">
-                <a href="Tela-Inicio.html"><img class="rodape-imagem" src="logo.png"></a>
-                <p class="rodape-direito">© 2022 Todos os direitos reservados | 2ense.</p>
+                <a href="Tela-Inicio.html"><img class="rodape-imagem" src="UCL.png"></a>
+                <p class="rodape-direito"><strong>Página dedicada a Uefa Champions-League | FanPageBR Champions League.</strong></p>
             </div>
 
             <div class="rodape-conteudo-sessao">
@@ -78,16 +78,16 @@
 </html>
 
 <script>
-    var emailvd = 'matriz@carrefour.com'
+    var emailvd = 'pedro11meia@ucl.com'
 
     function recuperar() {
         var email = in_usuario.value
         if (email == "") {
-            alert("Insira um Email")
+            alert("Insira um Email Jogador")
         }
         else {
             if (email == emailvd) {
-                alert("E-mail encaminhado!")
+                alert("E-mail encaminhado Jogador !")
                 window.location.href = "login.html"
             } else {
                 alert("O conteúdo inserido não esta registrado. Verifique se você digitou seu e-mail corretamente.")

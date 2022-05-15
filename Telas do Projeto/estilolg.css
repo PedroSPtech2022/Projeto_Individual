@@ -10,8 +10,8 @@
 }
 
 body{
-    background-image: url(fundo3.jpg);
-    background-size: 100% 100%;
+    background-image: url(fundo.jpg);
+    background-size: 100%;
 }
 
 .conteudo {
@@ -78,19 +78,6 @@ body{
 
 .cabecalho-menu-item:hover::after {
     width: 100%;
-}
-
-
-@keyframes transicao {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
 }
 
 .transicao {

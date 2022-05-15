@@ -132,11 +132,6 @@ section.conteudo-principal {
     transform: scale(1.05);
 }
 
-.estilo-formulario-caixa {
-    border: linear-gradient(68.15deg, #ff8800 16.62%, rgb(130, 10, 209) 85.61%);
-    padding: 15px;
-    border-radius: 15px;
-}
 
 legend {
     border: none;
@@ -181,13 +176,10 @@ legend {
 
 .submit:hover {
     cursor: pointer;
-    color: rgb(130, 10, 209);
+    color: rgba(52, 98, 165, 1);
     background: rgb(255, 255, 255);
     border: rgb(255, 255, 255) 1px solid;
 }
-
-
-
 
 .rodape {
     padding: 32px;
@@ -238,7 +230,7 @@ legend {
 }
 
 .rodape-imagem {
-    height: 48px;
+    height: 55px;
     align-self: center;
     display: block;
     margin: auto;
