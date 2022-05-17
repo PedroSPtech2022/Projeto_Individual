@@ -14,8 +14,9 @@
 
 <body>
     <!-- Cabeçalho -->
-    <header class="cabecalho">
-        <a onclick="tocar()" href="home.html"><img src="UCL.png" alt="Logo da marca." class="cabecalho-logo"></a>
+    <header class="cabecalho"><button class="musica"onclick="tocar()">Hino</button>
+        <audio src="ucl.mp3" id="ucl" preload></audio>
+        <a href="home.html"><img src="UCL.png" alt="Logo da marca." class="cabecalho-logo"></a>
         <nav class="cabecalho-menu">
             <a class="cabecalho-menu-item" href="#p1">Início</a>
             <a class="cabecalho-menu-item" href="#p2">A FanPageBR UCL</a>
@@ -50,9 +51,7 @@
                 <h2>Desenvolvedor</h2>
             </div>
             <p class="conteudo-secundario-paragrafo">Desenvolvedor (Pedro Neto). Eu conheci o esporte aos 10 anos através de meus pais, Ficava horas e horas assistindo aos jogos da UCL. 
-                Aos 15 anos fazia parte de 2 times de bairro, aos 16 cheguei a ficar 2 semanas em um clube de futsal profissional mais fui dispensado por não ganhar fisico
-                 como todo garoto sonhava em ser jogador mais os 17 anos tive que largar o sonho para ajudar em casa, pensando nisso com os conhecimentos obtidos
-                através da Faculdade SPTech School desenvolvi uma FanPage para demonstrar o carinho pela competição e ao esporte.</p>
+                Aos 15 anos fazia parte de 2 times de bairro, aos 16 cheguei a ficar 2 semanas em um clube de futsal profissional mais fui dispensado, como todo garoto sonhava em ser jogador mais os 17 anos tive que largar o sonho para ajudar em casa, pensando nisso com os conhecimentos obtidos através da Faculdade SPTech School desenvolvi uma FanPage para demonstrar o carinho pela competição e ao esporte.</p>
             <img class="conteudo-secundario-imagem" src="euft.jpeg" alt="Imagem da equipe."> 
         </section>
     </main>
@@ -68,7 +67,7 @@
             </div>
 
             <div class="rodape-conteudo-imagem">
-                <a href="Tela-Inicio.html"><img class="rodape-imagem" src="UCL.png"></a>
+                <a href="home.html"><img class="rodape-imagem" src="UCL.png"></a>
                 <p class="rodape-direito"><strong>Página dedicada a Uefa Champions-League | FanPageBR Champions League.</strong></p>
             </div>
 
@@ -92,10 +91,8 @@
 
 </html>
 <script>
-    var musica = `<source src="ucl.mp3" type="audio/mp3">`
-
-    function tocar() {
-        audi
+    function tocar(){
+        const audio = document.getElementById('ucl');
+        audio.play();
     }
-
 </script>
