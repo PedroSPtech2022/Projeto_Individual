@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de Fan para a UCL">
+    <title>Esqueceu a Senha - FanPageBR UCL</title>
+    <link rel="stylesheet" href="./css/estiloesqueceu.css">
+    <link rel="shortcut icon" type="imagex/png" href="./assets/imgs/UCL.png">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html"><img src="./assets/imgs/UCL.png" alt="Logo da marca." class="cabecalho-logo"></a>
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item" href="index.html">Início</a>
+            <a class="cabecalho-menu-item" href="index.html">A FanPageBR UCL</a>
+            <a class="cabecalho-menu-item" href="contato.html">Contato</a>
+            <a class="cabecalho-menu-item" href="login.html">Login</a>
+        </nav>
+    </header>
+    <center>
+        <main class="conteudo">
+            <section class="conteudo-terciario transicao">
+                <div class="formulario"></div>
+                <div class="estilo-formulario" id="div1">
+                    <fieldset class="estilo-formulario-caixa">
+                        <legend>Recupere sua Senha Jogador</legend>
+                        <br>
+                        <div class="inputForm">
+                            <label for="email" class="labelInput">Email</label></label>
+                            <input placeholder="Digite seu e-mail*" name="usuario" id="in_usuario" class="inputUser"
+                                required autofocus>
+                        </div>
+                        <br>
+                        <a class="botaocad" href="cadastro.html">Não tem uma conta? <b>Crie uma!</b></a>
+                        <br> <br>
+                        <button onclick="recuperar()" class="submit">Enviar</button>
+            </section>
+        </main>
+    </center>
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+
+            <div class="rodape-conteudo-sessao">
+                <p class="rodape-conteudo-titulo">Fale Conosco</p>
+                <div class="rodape-conteudo-barra"></div>
+                <a class="rodape-conteudo-ancora" href="contato.html">Contato</a>
+                <a class="rodape-conteudo-ancora" href="index.html#p3">0800 303 2022</a>
+            </div>
+
+            <div class="rodape-conteudo-imagem">
+                <a href="index.html"><img class="rodape-imagem" src="./assets/imgs/UCL.png"></a>
+                <p class="rodape-direito"><strong>Página dedicada a Uefa Champions-League | FanPageBR Champions League.</strong></p>
+            </div>
+
+            <div class="rodape-conteudo-sessao">
+                <p class="rodape-conteudo-titulo">Endereço</p>
+                <div class="rodape-conteudo-barra"></div>
+                <p class="rodape-conteudo-ancora">
+                    São Paulo / SP <br>
+
+                    Rua Haddock Lobo, 595 <br>
+
+                    Cerqueira César <br>
+
+                    CEP 01414-001
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    var emailvd = 'pedro11meia@ucl.com'
+
+    function recuperar() {
+        var email = in_usuario.value
+        if (email == "") {
+            alert("Insira um Email Jogador")
+        }
+        else {
+            if (email == emailvd) {
+                alert("E-mail encaminhado Jogador !")
+                window.location.href = "login.html"
+            } else {
+                alert("O conteúdo inserido não esta registrado. Verifique se você digitou seu e-mail corretamente.")
+            }
+        }
+    }
+</script>
