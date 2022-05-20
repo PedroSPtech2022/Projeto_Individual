@@ -11,7 +11,7 @@
 
 
 body{
-    background-image: url(fundo.jpg);
+    background-image: url(../assets/imgs/fundo.jpg);
     background-size: 100%;
 }
 
