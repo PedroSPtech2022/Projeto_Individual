@@ -2,16 +2,34 @@
 -- Você precisa executar os comandos no banco de dados para criar as tabelas,
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+CREATE DATABASE champions;
 
-USE acquatec;
+USE champions;
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
-	senha VARCHAR(50)
+	senha VARCHAR(50),
+    fkJogador int,
+    FOREIGN KEY (fkJogador) REFERENCES Jogadores (idJogador)
 );
+
+CREATE TABLE Jogadores (
+	idJogador INT PRIMARY KEY AUTO_INCREMENT,
+	Jogadores VARCHAR (45)
+);
+ INSERT INTO Jogadores VALUES (NULL,'CR7'),
+                              (NULL,'DISTEF'),
+							  (NULL,'MALDINI'),
+							  (NULL,'SERGIO'),
+							  (NULL,'MESSI'),
+							  (NULL,'BENZEMA'),
+							  (NULL,'CASSILAS'),
+							  (NULL,'ZIDANE'),
+							  (NULL,'BRUXO'),
+							  (NULL,'LEWA');
+						
 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
