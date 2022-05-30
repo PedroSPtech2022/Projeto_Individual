@@ -118,6 +118,13 @@ section.conteudo-principal2 {
     margin-top: 0px;
 }
 
+
+.grafico {
+    border-radius: 15px 15px;
+    width: 700px;
+    height: 200px;
+}
+
 .conteudo-principal2 {
     display: flex;
     align-items: center;
@@ -127,6 +134,17 @@ section.conteudo-principal2 {
     height: 50vh;
     margin: 0px 300px 0px 300px;
     height: 54vh;
+}
+
+.conteudo-principal3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 5px;
+    height: 60vh;
+    margin: 0px 300px 0px 300px;
+    height: 60vh;
 }
 
 .transicao {
@@ -285,8 +303,8 @@ section.conteudo-principal2 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     background-color: rgba(255, 255, 255, 0);
-    width: 240px;
-    height: 120px;
+    width: 200px;
+    height: 100px;
     margin-bottom: 1rem;
     border-radius: 6.25rem;
     border: none;

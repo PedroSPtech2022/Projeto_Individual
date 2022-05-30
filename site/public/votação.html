@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/estilovt.css">
     <link rel="shortcut icon" type="imagex/png" href="./assets/imgs/UCL.png">
     <title>Maiores Campeões da UCL</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -21,6 +22,7 @@
             <a class="cabecalho-menu-item" href="login.html">Login</a>
         </nav>
     </header>
+    
     <!-- Principal -->
     <main id="p1" class="conteudo">
         <section class="conteudo-principal">
@@ -110,6 +112,15 @@
             <button class="conteudo-principal-escrito-botao2 transicao2" onclick="dash()">Confirmar Voto</button>
         </section>
 
+        <section class="conteudo-principal3">
+
+            <div class="conteudo-principal-imagem transicao">
+                <canvas class="grafico" id="myChart" style=" background: white; width: 700px;"></canvas>
+            </div>
+
+        </section>
+
+
     </main>
     <!-- Rodapé -->
     <footer class="rodape">
@@ -154,7 +165,7 @@
 
     function dash() {
         var Jogadores = document.getElementsByName('linguagens');
-        for (var i = 0; i < pacote.length; i++) {
+        for (var i = 0; i < VetorJogadores.length; i++) {
             if (Jogadores[i].checked) {
                 if (pacote[i].value == "CR7") {
                     var CR7 = "CR7";
@@ -176,6 +187,48 @@
                 }
             }
         }
-        window.location.href = "./dashboard/dashboard.html"
     }
 </script>
+
+
+<script>
+    const labels = [
+        'CR7',
+        'DI STEFANO',
+        'MALDINI',
+        'SERGIO RAMOS',
+        'MESSI',
+        'BENZEMA',
+        'CASILLAS',
+        'ZIDANE',
+        'RONALDINHO',
+        'LEWANDOWSKI',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Votação Jogador mais Marcante da UCL',
+            backgroundColor: 'Blue',
+            borderColor: 'Blue',
+            data: [0, 20, 80, 55, 48, 100],
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+</script>
+
+</html>
