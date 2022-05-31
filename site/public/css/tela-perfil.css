@@ -10,8 +10,8 @@
 }
 
 body{
-    background-image: url(bola.jpg);
-    background-size: 100%;
+    background-image: url(../assets/imgs/bola.jpg);
+    background-size: cover;
 }
 
 .cabecalho {
@@ -106,6 +106,7 @@ section.conteudo-principal {
     flex-direction: column;
     gap: 32px;
     text-align: center;
+    margin-left: 80px;
 }
 
 .conteudo-principal-escrito-titulo {
@@ -153,6 +154,7 @@ section.conteudo-principal {
     position: relative;
     font-weight: bold;
     opacity: 0.8;
+    margin-left: 80px;
 }
 
 
@@ -178,167 +180,36 @@ section.conteudo-principal {
 
 }
 
-.conteudo-principal-imagem:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    background-color: white;
-}
 
 .conteudo-secundario {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    margin-top: 48px;
-    text-align: justify;
+    margin-top: 0px;
+    margin-right: 400px;
 }
 
 .conteudo-secundario-titulo {
-    border-top: 0.4px solid #FFF2E7;
     padding-top: 48px;
     font-family: 'Prompt', sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 44px;
-    color: #FFF2E7;
+    color: #FFFF;
     margin-bottom: 16px;
-    line-height: 64px;
-    margin-top: 100px;
+    line-height: 20px;
+    margin-right: 100px;
 }
 
-.conteudo-secundario-subtitulo {
-    font-weight: 900;
-    font-size: 16px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    border: none;
-    padding: 10px 10px 10px 10px;
-    font-family: 'Prompt', sans-serif;
-    color: #FFF2E7;
-    margin-left: 800px;
-    margin-bottom: 50px;
-    line-height: 64px;
-    display: flex;
-    border-left: rgb(255, 255, 255) solid 3px;
-    flex-direction: row-reverse
-}
 
 .conteudo-secundario-paragrafo {
     font-weight: 300;
     font-size: 24px;
     line-height: 50px;
-    margin: 0px 300px 0px 300px;
     font-family: 'Sarala', sans-serif;
     color: #ffffff;
     text-align: justify;
-
+    margin-right: 200px;
 }
-
-.conteudo-secundario-imagem {
-    border: solid 0.1px white;
-    margin-top: 55px;
-    margin-bottom: 90px;
-    align-self: auto;
-    width: 664px;
-    height: 308px;
-    box-shadow: 30px 30px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 15px 100px;
-}
-
-.conteudo-terciario {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Prompt', sans-serif;
-    flex-direction: column;
-}
-
-.conteudo-terciario-titulo {
-    font-weight: 900;
-    font-size: 30px;
-    letter-spacing: 9px;
-    text-transform: uppercase;
-    border: none;
-    padding: 50px 10px 10px 10px;
-    font-family: 'Prompt', sans-serif;
-    color: #FFF2E7;
-    border-top: 0.4px solid rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.estilo-formulario {
-    background-color: rgba(0, 0, 0, 0.555);
-    padding: 20px;
-    border-radius: 15px;
-    width: 450px;
-    color: rgb(255, 255, 255);
-    transition: 0.7s ease-in-out;
-    cursor: pointer;
-}
-
-.estilo-formulario:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-}
-
-.estilo-formulario-caixa {
-    border: linear-gradient(68.15deg, #ff8800 16.62%, rgb(130, 10, 209) 85.61%);
-    padding: 15px;
-    border-radius: 15px;
-}
-
-legend {
-    border: none;
-    padding: 10px;
-    text-align: center;
-    background: rgb(255, 255, 255);
-    color: rgb(130, 10, 209);
-    border-radius: 8px;
-    letter-spacing: 2px;
-
-}
-
-.inputBox {
-    position: relative;
-}
-
-.inputUser {
-    background: none;
-    border: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    outline: none;
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    width: 100%;
-    letter-spacing: 2px;
-}
-
-#submit {
-    background: rgb(255, 255, 255);
-    width: 100%;
-    border: none;
-    padding: 15px;
-    color: rgb(130, 10, 209);
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0.8;
-}
-
-#submit:hover {
-    background: rgb(130, 10, 209);
-    color: rgb(255, 255, 255);
-    opacity: 1;
-}
-
-
-
 
 .rodape {
     padding: 32px;

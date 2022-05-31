@@ -9,9 +9,10 @@
     text-decoration: none;
 }
 
+
 body{
-    background-image: url(../assets/imgs/fundo.jpg);
-    background-size: 100%;
+    background-image: url(../assets/imgs/fundo2.jpg);
+    background-size: cover;
 }
 
 
@@ -92,18 +93,19 @@ body{
 }
 
 .conteudo {
-    height: 100vh;
+    height: 80vh;
 }
 
 .conteudo-section {
-    margin-top: 16vh;
+    margin-top: 18vh;
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Prompt', sans-serif;
-    height: 80vh;
+    height: 60vh;
     text-align: center;
+    margin-bottom: 0px;
 }
 
 .estilo-formulario {

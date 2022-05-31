@@ -9,9 +9,10 @@
     text-decoration: none;
 }
 
+
 body{
-    background-image: url(../assets/imgs/fundo.jpg);
-    background-size: 100%;
+    background-image: url(../assets/imgs/fundo2.jpg);
+    background-size: cover;
 }
 
 .conteudo {
@@ -91,20 +92,20 @@ body{
 }
 
 .conteudo {
-    height: 100vh;
+    height: 60vh;
 }
 
 .conteudo-section {
-    margin-top: 14vh;
+    margin-top: 22vh;
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Prompt', sans-serif;
-    height: 80vh;
+    height: 200px;
     text-align: center;
+    margin-bottom: 0px;
 }
-
 .estilo-formulario {
     background-color: rgba(0, 0, 0, 0.514);
     padding: 20px;

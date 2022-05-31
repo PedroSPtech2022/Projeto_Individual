@@ -25,7 +25,7 @@
         <a href="index.html"><img src="./assets/imgs/UCL.png" alt="Logo da marca." class="cabecalho-logo"></a>
         <nav class="cabecalho-menu">
             <a class="cabecalho-menu-item" href="index.html">Início</a>
-            <a class="cabecalho-menu-item" href="index.html">A FanPageBR UCL</a>
+            <a class="cabecalho-menu-item" href="sobre.html">A FanPageBR UCL</a>
             <a class="cabecalho-menu-item" href="contato.html">Contato</a>
             <a class="cabecalho-menu-item" href="cadastro.html">Cadastro</a>
         </nav>
@@ -55,6 +55,9 @@
                                         <input id="senha_input" type="password" placeholder="******" class="inputUser">
 
                                         <button class="submit" onclick="entrar()">Entrar</button>
+
+                                        <a class="botaocad" href="Tela-EsqueceuSenha.html">Esqueceu a Senha Jogador?</a>
+                                        <a class="botaocad" href="cadastro.html">Não tem uma conta? <b>Crie uma!</b></a>
 
                                     </div>
 
@@ -151,7 +154,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "tela-perfil.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

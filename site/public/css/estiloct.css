@@ -12,8 +12,8 @@
 
 
 body{
-    background-image: url(bola.jpg);
-    background-size: 100% 100%;
+    background-image: url(../assets/imgs/bola.jpg);
+    background-size: cover;
 }
 
 
