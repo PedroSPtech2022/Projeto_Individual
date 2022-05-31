@@ -170,34 +170,9 @@
 
 <script>
 
-    var VetorJogadores = []
+    var VetorJogadores = [CR7[0], DISTEF[1], MALDINI[2], SERGIO[3], MESSI[4], BENZEMA[5], CASILLAS[6], ZIDANE[7], BRUXO[8], LEWA[9]]
     var myChart = undefined
 
-    function dash() {
-        var Jogadores = document.getElementsByName('linguagens');
-        for (var i = 0; i < VetorJogadores.length; i++) {
-            if (Jogadores[i].checked) {
-                if (pacote[i].value == "CR7") {
-                    var CR7 = "CR7";
-                    alert(CR7);
-                } else if (pacote[i].value == "DISTEF") {
-                    var DISTEF = "DISTEF";
-                    alert(DISTEF);
-                } else if (pacote[i].value == "MALDINI") {
-                    var MALDINI = "MALDINI";
-                    alert(MALDINI);
-                }
-                else if (pacote[i].value == "SERGIO") {
-                    var SERGIO = "SERGIO";
-                    alert(SERGIO);
-                }
-                else if (pacote[i].value == "MESSI") {
-                    var MESSI = "MESSI";
-                    alert(MESSI);
-                }
-            }
-        }
-    }
 </script>
 
 <script>
@@ -215,7 +190,7 @@
         'LEWANDOWSKI',
     ];
 
-    var votos = [97, 35, 50, 85, 88, 48, 30, 10, 60, 15]
+    var votos = [38, 12, 22, 27, 32, 12, 8, 14, 16, 10]
 
     function criar() {
         if (myChart != undefined) {
@@ -246,6 +221,11 @@
 
     criar()
 
+</script>
+<script>
+    function dash() {
+        VetorJogadores.push('linguagens')
+    }
 </script>
 
 </html>
