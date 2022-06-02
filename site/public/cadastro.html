@@ -38,7 +38,7 @@
                 <div class="estilo-formulario" id="div1">
                         <fieldset class="estilo-formulario-caixa">
                             <legend>Cadastro</legend>
-
+                            <center>
                             <div class="formulario">
                                 <div class="card">
                                     <div class="formulario">
@@ -60,7 +60,39 @@
                                         <input id="time_input"  placeholder="Time do Coração:"
                                             class="inputUser">
 
+                                        <span class="tipo_campo">Selecione o Campeão da UCL que você mais Gosta</span>
+                                        <select id="sel_op">
+
+                                            <option value="0">-- Selecione Um Time --</option>
+                                            <option value="2000">Real Madrvalue</option>
+                                            <option value="2001">Milan</option>
+                                            <option value="2002">Liverpool</option>
+                                            <option value="2003">Bayer München</option>
+                                            <option value="2004">FC Barcelona</option>
+                                            <option value="2005">Ajax</option>
+                                            <option value="2006">Manchester United</option>
+                                            <option value="2007">Internazionale</option>
+                                            <option value="2008">Benfica</option>
+                                            <option value="2009">Porto</option>
+                                            <option value="2010">Juventus</option>
+                                            <option value="2011">Chealsea</option>
+                                            <option value="2012">Borussia Dortmound</option>
+                                            <option value="2013">Aston Villa</option>
+                                            <option value="2014">PSV</option>
+                                            <option value="2015">Celtic</option>
+                                            <option value="2016">Estrela Vermelha</option>
+                                            <option value="2017">Feyenoord</option>
+                                            <option value="2018">Hamburgo</option>
+                                            <option value="2019">Steaua</option>
+                                            <option value="2020">Nottingham Forest</option>
+                                            <option value="2021">Olympique de Marseillie</option>
+                                        
+                                        </select>
+                                        <br>
                                         <button class="submit" onclick="cadastrar()">Cadastrar</button>
+
+                                    </center>
+
 
                                     </div>
 
@@ -129,8 +161,9 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var selectVar = sel_op.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || timeVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || timeVar == "" || selectVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -152,7 +185,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                nomeTIMEFServer: timeVar
+                nometimefServer: timeVar,
+                selectServer: selectVar
             })
         }).then(function (resposta) {
 

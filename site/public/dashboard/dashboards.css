@@ -229,9 +229,10 @@ body {
 }
 
 .tituloGraficos {
-  color: rgb(216, 216, 216);
+  color: white;
   display: flex;
   justify-content: center;
+
 }
 
 .btn-chart {
