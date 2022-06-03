@@ -3,7 +3,13 @@
 *,
 body {
   font-family: "Exo 2", sans-serif;
-  background-image: url(../assets/imgs/fundo.jpg);
+  /* background-image: url(../assets/imgs/fundo.jpg); */
+}
+.btn-nav{
+  color: white;
+}
+h1{
+  color: white;
 }
 
 .dash-right .avisos {
@@ -99,11 +105,16 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-
+.header-left{
+  background-image: url(../assets/imgs/fundo.jpg);
+}
 .div-buttons > * {
   margin-left: 30px;
 }
 
+.nome{
+  color: white;
+}
 /* pagina graficos */
 
 .dash-header {
@@ -115,8 +126,7 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
-
+  background-image: url(../assets/imgs/fundo.jpg);
   /* width: 75%;
     display: flex;
     background-color: #161618;
@@ -134,25 +144,7 @@ body {
   margin-top: 30px;
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
 
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
 
 .item-regua {
   padding: 5px;
@@ -226,6 +218,7 @@ body {
   width: 80%;
   margin: auto;
   padding-top: 10px;
+  background-color: white;
 }
 
 .tituloGraficos {
@@ -245,4 +238,10 @@ body {
   background-color: white;
   margin: 5px;
   border-radius: 3px;
+}
+
+#canvas_grafico {
+ 
+  background-color: white;
+
 }
