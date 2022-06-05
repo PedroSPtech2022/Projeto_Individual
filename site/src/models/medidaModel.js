@@ -14,7 +14,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select TIMESUCL.nomeTime, count(usuario.id) as 'Quantidade_de_Votos' from Usuario join TIMESUCL on fkTimeUCL = idTIme group by TIMESUCL.nomeTime;  `;
+        instrucaoSql = `select TIMESUCL.nomeTime, count(usuario.idUsuario) as 'Quantidade_de_Votos' from Usuario join TIMESUCL on fkTimeUCL = idTimeUCL group by TIMESUCL.nomeTime;  `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -38,7 +38,7 @@ function buscarMedidasEmTempoReal(idAquario) {
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select TIMESUCL.nomeTime, count(usuario.id) as 'Quantidade_de_Votos' from Usuario join TIMESUCL on fkTimeUCL = idTIme group by TIMESUCL.nomeTime;  `;
+        instrucaoSql = `select TIMESUCL.nomeTime, count(usuario.idUsuario) as 'Quantidade_de_Votos' from usuario join TIMESUCL on fkTimeUCL = idTimeUCL group by TIMESUCL.nomeTime;  `;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

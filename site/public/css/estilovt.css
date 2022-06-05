@@ -102,9 +102,9 @@ section.conteudo-principal {
     flex-direction: column;
     justify-content: space-around;
     padding-top: 5px;
-    height: 50vh;
+    height: 53vh;
     margin: 0px 300px 0px 300px;
-    height: 50vh;
+    height: 53vh;
 }
 
 .checkbox{
@@ -305,7 +305,7 @@ section.conteudo-principal2 {
     padding-right: 1.25rem;
     background-color: rgba(255, 255, 255, 0);
     width: 200px;
-    height: 100px;
+    height: 40px;
     margin-bottom: 1rem;
     border-radius: 6.25rem;
     border: none;
@@ -333,7 +333,7 @@ section.conteudo-principal2 {
     padding-right: 1.25rem;
     background-color: rgba(255, 255, 255, 0);
     width: 240px;
-    height: 60px;
+    height: 40px;
     margin-bottom: 1rem;
     border-radius: 6.25rem;
     border: none;

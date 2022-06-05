@@ -35,7 +35,7 @@
                 <div class="caixa transicao">
                     <label>
                         <img class="conteudo-principal-imagem transicao" src="./assets/imgs/cr7141.png"
-                            alt="Imagem carrinho de mercado.">
+                            alt="Imagem do Jogador Citado">
                         <h2 class="conteudo-principal-titulo transicao">Cristiano Ronaldo - 5 Títulos</h2>
                         <input type="radio" id="CR7" name="linguagens" value="32">
                     </label>
@@ -43,7 +43,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/di stefano.jpg"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Di Stéfano - 5 Títulos</h2>
                     <input type="radio" id="DISTEF" name="linguagens" value="12">
                 </label>
@@ -51,7 +51,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/maldini.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Maldini - 5 Títulos</h2>
                     <input type="radio" id="MALDINI" name="linguagens" value="22">
                 </label>
@@ -60,7 +60,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/sergio ramos.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Sergio Ramos - 4 Títulos</h2>
                     <input type="radio" id="SERGIO" name="linguagens" value="26">
                 </label>
@@ -68,7 +68,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/messi.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Messi - 4 Títulos</h2>
                     <input type="radio" id="MESSI" name="linguagens" value="28">
                 </label>
@@ -81,7 +81,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/benzema.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Benzema - 4 Títulos</h2>
                     <input type="radio" id="BENZEMA" name="linguagens" value="5">
                 </label>
@@ -89,7 +89,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/casillas.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Casillas - 3 Títulos</h2>
                     <input type="radio" id="CASILLAS" name="linguagens" value="6">
                 </label>
@@ -97,7 +97,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/zidane.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao">Zidane - 1 Títulos</h2>
                     <input type="radio" id="ZIDANE" name="linguagens" value="7">
                 </label>
@@ -105,7 +105,7 @@
                 <div class="caixa transicao">
                   <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/bruxo.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao" >Ronaldinho - 1 Títulos</h2>
                     <input type="radio" id="BRUXO" name="linguagens" value="8">
                 </label>
@@ -113,7 +113,7 @@
                 <div class="caixa transicao">
                     <label>
                     <img class="conteudo-principal-imagem transicao" src="./assets/imgs/lewa.png"
-                        alt="Imagem carrinho de mercado.">
+                        alt="Imagem do Jogador Citado">
                     <h2 class="conteudo-principal-titulo transicao" >Lewandowski - 1 Títulos</h2>
                     <input type="radio" id="LEWA" name="linguagens" value="9">
                 </label>
@@ -170,8 +170,8 @@
 </html>
 
 <script>
-
-    // var VetorJogadores = [CR7[0], DISTEF[1], MALDINI[2], SERGIO[3], MESSI[4], BENZEMA[5], CASILLAS[6], ZIDANE[7], BRUXO[8], LEWA[9]]
+         //Cumprindo Requisito de uso de VAR
+           
     var myChart = undefined
     var CR7Var = Number(CR7.value)
     var DISTEFVar = Number(DISTEF.value)
@@ -199,10 +199,15 @@
         'LEWANDOWSKI',
     ];
 
+    // Cumprindo requisito do uso de Vetor
+
     var votos = [CR7Var, DISTEFVar, MALDINIVar, SERGIOVar, MESSIVar, BENZEMAVar, CASILLASVar, ZIDANEVar, BRUXOVar, LEWANDOWSKIVar]
+
+    // Cumprindo o requisito de uso de função
 
     function confirmarVoto(){
 
+        // Cumprindo requisito de calculo matemático 
         if(CR7.checked){
            votos[0] = votos[0] + 1
         }

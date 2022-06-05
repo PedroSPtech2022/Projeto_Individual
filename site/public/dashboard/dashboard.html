@@ -21,7 +21,7 @@
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 
 </head>
-
+<!-- Cumprindo requisito de condição com o validarSessao() -->
 <body onload="validarSessao(), atualizarFeed()">
 
     <div class="janela">
@@ -37,20 +37,19 @@
 
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <button class="btn-logout" onclick="sair()">
                 <h3>Sair</h3>
-            </div>
+            </button>
 
         </div>
 
         <div class="dash">
             <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
                 <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Torcida dos Campeões</button>
             </div>
             <div>
                 <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
+                    <span id="tituloAquario"></span>
                 </h3>
             </div>
             <div class="graph">
@@ -66,6 +65,10 @@
 
 <script>
 
+    function sair(){
+        window.location="../tela-perfil.html"
+    }
+
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
@@ -76,7 +79,7 @@
 
     function alterarTitulo(idAquario) {
         var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Gráficos da Votação para o Jogador mais Marcante Da UCL"
+        tituloAquario.innerHTML = "Qual a Maior Torcida da Comunidade FanPageBR UCL"
     }
 
     // O gráfico é construído com três funções:
@@ -124,7 +127,7 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-umidade',
+                    yAxisID: 'y-Votos',
                     label: 'Votos',
                     borderColor: 'white',
                     backgroundColor: 'blue',
@@ -167,20 +170,20 @@
                         type: 'linear',
                         display: true,
                         position: 'left',
-                        id: 'y-temperatura',
+                        id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 50,
                             min: 0
                         }
                     }, {
                         type: 'linear',
                         display: false,
                         position: 'right',
-                        id: 'y-umidade',
+                        id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 50,
                             min: 0
                         },
 
@@ -191,8 +194,6 @@
                 }
             }
         });
-
-        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
     }
 
 
