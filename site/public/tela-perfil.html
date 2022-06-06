@@ -27,7 +27,7 @@
             <img class="conteudo-principal-imagem transicao" src="./assets/imgs/11.jpeg" alt="Imagem de Perfil.">
             <div class="conteudo-principal-escrito">
                 <h1 class="conteudo-principal-escrito-titulo transicao">Pedro Neto</h1>
-                <button class="conteudo-principal-escrito-botao transicao" onclick="dash()">Acompanhar Pesquisa</button>
+                <button class="conteudo-principal-escrito-botao transicao" onclick="dash()">Acompanhar Pesquisa<br>Sobre Torcidas da Comunidade</button>
             </div>
         </section>
 
@@ -42,6 +42,27 @@
             </p>
         </div>
         </section>
+
+        <section class="conteudo-section transicao">
+            <div class="formulario">
+                <div class="estilo-formulario" id="div1">
+                    <fieldset class="estilo-formulario-caixa">
+                        <legend>Sorteio de Títulos</legend>
+                        <h3>Todos Sonham com a Champions vamos fazer um sorteio para testar sua sorte<br>pense no seu time
+                            preferido da UCl e digite um número abaixo
+                            para ver em quantos anos a glória eterna chegara para o seu clube !!! :)</h3>
+
+                        <span class="tipo_campo">Escreva um Número de 10 a 70</span>
+                        <input id="sorteio_input" type="text" placeholder="Em Quantos Anos Seu Time Ganharam a UCL"
+                            class="inputUser">
+
+                        <button class="submit" onclick="sorteio()">Sortear</button>
+
+                        <div id="div_erros_login"></div>
+                   </div>
+                 </div>
+             </fieldset>
+         </section>
 
     </main>
     <!-- Rodapé -->
@@ -82,7 +103,20 @@
 
 </html>
 <script>
-
+   // Cumprindo requisito de calculo matematico
+    function sorteio() {
+        var numero = Number(sorteio_input.value)
+        if(numero == " "){
+            alert("Insira Alguma Número Jogador !** :)")
+        }
+        else if(numero < 10 || numero > 70){
+        alert("Insira um Número de 10 a 70 Jogador !** :)")
+        }
+        else if(numero >= 10 && numero <= 70){
+        var sorteado = parseInt(Math.random() * numero)
+        div_erros_login.innerHTML = `Seu time ganhara a Champions em ${sorteado} anos !!! é só torcer :)`
+        }
+    }
 
     function dash(){
         window.location="./dashboard/dashboard.html"
