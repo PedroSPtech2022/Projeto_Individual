@@ -69,10 +69,10 @@ select TIMESUCL.nomeTime, count(usuario.idUsuario) as 'Quantidade de Votos' from
 
 create table Contato (
 idContato int primary key auto_increment,
-descricao varchar (300),
-fkUsuario int,
-foreign key (fkUsuario) references Usuario (idUsuario)
+nome VARCHAR(45),
+email VARCHAR(45),
+mensagem varchar (300)
 )auto_increment= 1000;
 
-insert into Contato values (null,'Site esta ficando execelente parabéns pelo projeto',2);
+insert into Contato values (null,'Wilker','wilker@spetch.school','Site esta ficando execelente parabéns pelo projeto');
 select * from Contato;

@@ -9,6 +9,7 @@
     <title>Contato - FanPageBR UCL</title>
     <link rel="stylesheet" href="./css/estiloct.css">
     <link rel="shortcut icon" type="imagex/png" href="UCL.png">
+    <script src="./js/funcoes.js"></script>
 
 </head>
 <header class="cabecalho">
@@ -26,6 +27,11 @@
     <center>
     <main id="p1" class="conteudo">
         <section id="p3">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
             <h5 class="conteudo-terciario-titulo transicao">Caixa Para Sugestões</h5>
             <section class="conteudo-terciario">
                 <div class="formulario">
@@ -35,24 +41,29 @@
                                 <br>
                                 <div class="inputForm">
                                     <label for="nome" class="labelInput">Nome</label>
-                                    <input placeholder="Seu nome*" type="text" name="nome" id="in_nome"
+                                    <input placeholder="Seu nome*" type="text" name="nome" id="nome_input"
                                         class="inputUser" required autocomplete="off">
 
                                 </div>
                                 <br>
                                 <div class="inputForm">
                                     <label for="email" class="labelInput">E-mail</label>
-                                    <input placeholder="Seu e-mail*" type="email" name="email" id="in_email"
+                                    <input placeholder="Seu e-mail*" type="email" name="email" id="email_input"
                                         class="inputUser" required autocomplete="off">
 
                                 </div>
                                 <br>
                                 <div class="inputForm">
                                     <label for="Mensagem" class="labelInput">Mensagem</label>
-                                    <textarea placeholder="Sua mensagem aqui" type="text" name="texto" id="in_mensagem"
+                                    <textarea placeholder="Sua mensagem aqui" type="text" name="texto" id="mensagem_input"
                                         cols="50" rows="10" class="inputUser" required autocomplete="off"></textarea>
                                     <br><br>
-                                    <button onclick="enviar()" class="submit">Enviar</button>
+                                    <button onclick="mensagem()" class="submit">Enviar</button>
+                                    <div id="div_aguardar" class="loading-div">
+                                        <img src="./assets/circle-loading.gif" id="loading-gif">
+                                    </div>
+
+                                    <div id="div_erros_login"></div>
                             </fieldset>
                     </div>
                 </div>
@@ -96,19 +107,66 @@
 
 </html>
 <script>
+    function mensagem() {
+        aguardar();
 
-    function enviar() {
-        nomecn = in_nome.value
-        emailcn = in_email.value
-        empresacn = in_empresa.value
-        telefonecn = in_telefone.value
-        mensagemcn = in_mensagem.value
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var mensagemVar = mensagem_input.value;
+        
+        if (nomeVar == "" || emailVar == "" || mensagemVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-        if (nomecn == "" || emailcn == "" || mensagemcn == "") {
-            alert("Insira dados em todos os campos, por gentileza.")
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 50000)
         }
-        else {
-            alert("Aguarde, pois, retornaremos o contato em breve! :)")
-        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/mensagem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                mensagemServer: mensagemVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML =
+                    "Mensagem enviada com sucesso";
+
+                setTimeout(() => {
+                    window.location = "contato.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar enviar a mensagem!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 </script>
