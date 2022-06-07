@@ -67,7 +67,7 @@ function cadastrar(req, res) {
     var senha = req.body.senhaServer;
     var nomeTIMEF = req.body.nometimefServer;
     var select = req.body.selectServer;
-
+    
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
