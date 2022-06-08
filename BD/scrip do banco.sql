@@ -82,5 +82,6 @@ CREATE TABLE TimeCoracao(
 fkUsuario int,
 FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUsuario),
 idTimeC INT,
-PRIMARY KEY (fkUsuario,idTimeC)
+PRIMARY KEY (fkUsuario,idTimeC),
+nomeTimeC VARCHAR(45)
 ); 
