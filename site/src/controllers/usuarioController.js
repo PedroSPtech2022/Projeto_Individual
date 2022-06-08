@@ -100,6 +100,38 @@ function cadastrar(req, res) {
 }
 
 
+function cadastrar2(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nomeTIMEF = req.body.nometimefServer;
+    var nome = req.body.nomeServer;
+    
+    // Faça as validações dos valores
+     if (nomeTIMEF == undefined) {
+        res.status(400).send("Seu Time está undefined!");
+    } else if (nome == undefined) {
+        res.status(400).send("Seu Time está undefined!");
+    } else {
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar2(nomeTIMEF)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 function mensagem(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -134,9 +166,11 @@ function mensagem(req, res) {
 }
 
 
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrar2,
     listar,
     mensagem,
     testar

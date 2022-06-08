@@ -6,7 +6,8 @@ body {
   /* background-image: url(../assets/imgs/fundo.jpg); */
 }
 .btn-nav{
-  color: white;
+  color: blue;
+  background-color: white;
 }
 h1{
   color: white;
@@ -107,6 +108,7 @@ h1{
 }
 .header-left{
   background-image: url(../assets/imgs/fundo.jpg);
+  border-color: white;
 }
 .div-buttons > * {
   margin-left: 30px;
@@ -121,8 +123,8 @@ h1{
   background-color: #212124;
 }
 
-.dash {
-  width: 75%;
+.dash1 {
+width: 75%;
   position: relative;
   top: 0;
   left: 25%;
@@ -133,7 +135,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;*/
-  height: 100vh;
+  height: 120vh;
 }
 
 .regua {
@@ -141,17 +143,19 @@ h1{
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin-top: 30px;
 }
 
 
 
 .item-regua {
   padding: 5px;
-  width: 15%;
+  width: 12%;
   margin: 5px;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 1px;
+  background-color: white;
+  color: blue;
+  border-radius: 15px;
 }
 
 .cards {
@@ -211,7 +215,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .graph {
@@ -244,4 +248,12 @@ h1{
  
   background-color: white;
 
+}
+
+.btn-logout{
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  color:blue;
+  border: none;
 }

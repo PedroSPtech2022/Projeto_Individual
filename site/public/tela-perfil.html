@@ -27,20 +27,21 @@
             <img class="conteudo-principal-imagem transicao" src="./assets/imgs/11.jpeg" alt="Imagem de Perfil.">
             <div class="conteudo-principal-escrito">
                 <h1 class="conteudo-principal-escrito-titulo transicao">Pedro Neto</h1>
-                <button class="conteudo-principal-escrito-botao transicao" onclick="dash()">Acompanhar Pesquisa<br>Sobre Torcidas da Comunidade</button>
+                <button class="conteudo-principal-escrito-botao transicao" onclick="dash()">Acompanhar Pesquisa<br>Sobre
+                    Torcidas da Comunidade</button>
             </div>
         </section>
 
         <section id="p2" class="conteudo-secundario">
             <div>
-            <h3 class="conteudo-secundario-titulo">Perfil</strong></h3>
-            <p class="conteudo-secundario-paragrafo">Pedro Elias C Neto, 20 Anos, Natural de São Paulo (Capital)<br>
-                Torce para os Clubes: São Paulo FC & Milan.<br>
-                Posição: Meia, Ponta Esquerda / Direita, Ala (Futsal)<br>
-                Time Atual Inacio Futsal, Camisa 11 :).<br>
-                Estatísticas Temporada 2021-2022: 4 Gols e 13 Assistências.
-            </p>
-        </div>
+                <h3 class="conteudo-secundario-titulo">Perfil</strong></h3>
+                <p class="conteudo-secundario-paragrafo">Pedro Elias C Neto, 20 Anos, Natural de São Paulo (Capital)<br>
+                    Torce para os Clubes: São Paulo FC & Milan.<br>
+                    Posição: Meia, Ponta Esquerda / Direita, Ala (Futsal)<br>
+                    Time Atual Inacio Futsal, Camisa 11 :).<br>
+                    Estatísticas Temporada 2021-2022: 4 Gols e 13 Assistências.
+                </p>
+            </div>
         </section>
 
         <section class="conteudo-section transicao">
@@ -48,7 +49,8 @@
                 <div class="estilo-formulario" id="div1">
                     <fieldset class="estilo-formulario-caixa">
                         <legend>Sorteio de Títulos</legend>
-                        <h3>Todos Sonham com a Champions vamos fazer um sorteio para testar sua sorte<br>pense no seu time
+                        <h3>Todos Sonham com a Champions vamos fazer um sorteio para testar sua sorte<br>pense no seu
+                            time
                             preferido da UCl e digite um número abaixo
                             para ver em quantos anos a glória eterna chegara para o seu clube !!! :)</h3>
 
@@ -59,10 +61,10 @@
                         <button class="submit" onclick="sorteio()">Sortear</button>
 
                         <div id="div_erros_login"></div>
-                   </div>
-                 </div>
-             </fieldset>
-         </section>
+                </div>
+            </div>
+            </fieldset>
+        </section>
 
     </main>
     <!-- Rodapé -->
@@ -97,28 +99,30 @@
             </div>
         </div>
     </footer>
-
-
+   
 </body>
 
 </html>
 <script>
-   // Cumprindo requisito de calculo matematico
+    // Cumprindo requisito de calculo matematico
     function sorteio() {
         var numero = Number(sorteio_input.value)
-        if(numero == " "){
-            alert("Insira Alguma Número Jogador !** :)")
-        }
-        else if(numero < 10 || numero > 70){
-        alert("Insira um Número de 10 a 70 Jogador !** :)")
-        }
-        else if(numero >= 10 && numero <= 70){
         var sorteado = parseInt(Math.random() * numero)
-        div_erros_login.innerHTML = `Seu time ganhara a Champions em ${sorteado} anos !!! é só torcer :)`
-        }
+            if (numero == " ") {
+                alert("Insira Algum Número Jogador !** :)")
+            }
+            else if (numero < 10 || numero > 70) {
+                alert("Insira um Número de 10 a 70 Jogador !** :)")
+            }
+            else if (numero >= 10 && numero <= 70) {
+                div_erros_login.innerHTML = `Seu time ganhara a Champions em ${sorteado} anos !!! é só torcer :)`
+            }
+            for( var p = 0; p < sorteado; p++){
+                div_erros_login.innerHTML += `<img src="./assets/imgs/pngwing.com (1).png">`
+            }
     }
 
-    function dash(){
-        window.location="./dashboard/dashboard.html"
+    function dash() {
+        window.location = "./dashboard/dashboard.html"
     }
 </script>

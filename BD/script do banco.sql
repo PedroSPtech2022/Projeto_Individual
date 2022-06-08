@@ -6,35 +6,37 @@ CREATE TABLE usuario (
 	nome VARCHAR(45),
 	email VARCHAR(45),
 	senha VARCHAR(15),
-	nomeTIMEF VARCHAR (50),
+	fkTimeC INT,
+    FOREIGN KEY (fkTimeC) REFERENCES TimeCoracao (idTimeC),
     fkTimeUCL INT,
     FOREIGN KEY (fkTimeUCl) REFERENCES TIMESUCL (idTimeUCL)
 );
 						
-INSERT INTO usuario VALUES (NULL,'Pedro','pedro@ucl.com','pedrinho123','São Paulo',2001),
-                           (NULL,'Wilker','wilker@sptech.school','1234','São Paulo',2004),
-                           (NULL,'Thais de frança','thais@sptech.school','1234','São Paulo',2013),
-                           (NULL,'Mauricio','mauricio@sptech.school','123','Corinthians',2006),
-                           (NULL,'Eduardo Begattini','eduardobegattini@gmail.com','54321','Time Feminino',2016),
-                           (NULL,'Mateus','mateus@sptech.school','12345','Corinthians',2004),
-                           (NULL,'Luigi','lulu@gmail.com','12345','Palmeiras',2000),
-                           (NULL,'Leonardo Pinho','leonardo.pinho@sptech.school','1234','Barcelona',2004),
-                           (NULL,'Gustavo','gusta.goncalves@hotmail.com','Flamengo','12345',2002),
-                           (NULL,'Irineu','irineu@gmail.com','1234','Criciuma',2016),
-                           (NULL,'Gabriel Bordin','biel@gmail.com','123','Santos',2014),
-                           (NULL,'Nicolas','nick@gmail.com','1122','Borussia Dortmound',2013),
-                           (NULL,'Rafa','rafael.oliveira@sptech.school','rafa','Corinthians',2006),
-                           (NULL,'Ruy','ruy@gmail.com','1234','Vasco da Gama',2002),
-                           (NULL,'Michelly','Michelly@gmail.com','1234','Corinthians',2002),
-                           (NULL,'Rafaela','rafaela.dias@sptech.school','123','Corinthians',2000),
-                           (NULL,'Gabriel','gabriel.antonio@hotmail.com','ascd123','Corinthians',2007),
-                           (NULL,'Patrick','patrick@gmail.com','1234','Corinthians',2007),
-                           (NULL,'Lourenzo Mota','lourenzo.silva@gmail.com','1234567','Corinthians',2000),
-                           (NULL,'Ezequiel','ezequiel@gmail.com','0907','Santos',2004),
-                           (NULL,'Vitinho','victorlage@gmail.com','ODLA','Flamengo',2001),
-                           (NULL,'Fabio','fabo@gmail.com','123','Corinthians',2002),
-                           (NULL,'Kaique','kaique@gmail.com','1234','São Paulo',2001),
-                           (NULL,'Matheus do Carmo','matheus.carmo@gmail.com','matheus123','Corinthians',2000);
+INSERT INTO usuario VALUES (NULL,'Pedro','pedro@ucl.com','pedrinho123',300,2001),
+                           (NULL,'Wilker','wilker@sptech.school','1234',301,2004),
+                           (NULL,'Thais de frança','thais@sptech.school','1234',302,2013),
+                           (NULL,'Mauricio','mauricio@sptech.school','123',303,2006),
+                           (NULL,'Eduardo Begattini','eduardobegattini@gmail.com','54321',304,2016),
+                           (NULL,'Mateus','mateus@sptech.school','12345',305,2004),
+                           (NULL,'Luigi','lulu@gmail.com','12345',306,2000),
+                           (NULL,'Leonardo Pinho','leonardo.pinho@sptech.school','1234',307,2004),
+                           (NULL,'Gustavo','gusta.goncalves@hotmail.com','12345',308,2002),
+                           (NULL,'Irineu','irineu@gmail.com','1234',309,2016),
+                           (NULL,'Gabriel Bordin','biel@gmail.com','123',310,2014),
+                           (NULL,'Nicolas','nick@gmail.com','1122',311,2013),
+                           (NULL,'Rafa','rafael.oliveira@sptech.school','rafa',312,2006),
+                           (NULL,'Ruy','ruy@gmail.com','1234',313,2002),
+                           (NULL,'Michelly','Michelly@gmail.com','1234',314,2002),
+                           (NULL,'Rafaela','rafaela.dias@sptech.school','123',315,2000),
+                           (NULL,'Gabriel','gabriel.antonio@hotmail.com','ascd123',316,2007),
+                           (NULL,'Patrick','patrick@gmail.com','1234',317,2007),
+                           (NULL,'Lourenzo Mota','lourenzo.silva@gmail.com','1234567',318,2000),
+                           (NULL,'Ezequiel','ezequiel@gmail.com','0907',319,2004),
+                           (NULL,'Vitinho','victorlage@gmail.com','ODLA',320,2001),
+                           (NULL,'Fabio','fabo@gmail.com','123',321,2002),
+                           (NULL,'Kaique','kaique@gmail.com','1234',322,2001),
+                           (NULL,'Matheus do Carmo','matheus.carmo@gmail.com','matheus123',323,2000),
+                           (NULL,'Bruna','Bruna@gmail.com','1234',324,2000);
                            
 SELECT * FROM usuario;
 
@@ -79,9 +81,34 @@ INSERT INTO Contato VALUES (NULL,'Wilker','wilker@spetch.school','Site esta fica
 SELECT * FROM Contato;
 
 CREATE TABLE TimeCoracao(
-fkUsuario int,
-FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUsuario),
-idTimeC INT,
-PRIMARY KEY (fkUsuario,idTimeC),
-nomeTimeC VARCHAR(45)
-); 
+idTimeC INT PRIMARY KEY AUTO_INCREMENT,
+nomeTimeC VARCHAR (45)
+)AUTO_INCREMENT=300;
+
+INSERT INTO TimeCoracao VALUES (NULL,'São Paulo'), 
+                               (NULL,'São Paulo'),
+                               (NULL,'São Paulo'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Time Feminino'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Palmeiras'),
+                               (NULL,'Barcelona'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Criciuma'),
+                               (NULL,'Borussia Dortmound'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Vasco da Gama'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Santos'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Corinthians'),
+                               (NULL,'São Paulo'),
+                               (NULL,'São Paulo'),
+                               (NULL,'Corinthians'),
+                               (NULL,'Corinthians');
+                               
+SELECT * FROM TimeCoracao;                           

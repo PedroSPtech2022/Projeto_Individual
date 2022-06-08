@@ -42,8 +42,24 @@
             </button>
 
         </div>
+    
+        <div class="dash1">
+            
+            <div class="regua">
+                <div class="item-regua alerta-frio">
+                    <h4>Quantidade de Torcedores Baixa</h4>
+                    <h2>De 0 a 15</h2>
+                </div>
+                <div class="item-regua ideal">
+                    <h4>Quantidade de Torcedores Média</h4>
+                    <h2>De 20 a 29</h2>
+                </div>
+                <div class="item-regua alerta-quente">
+                    <h4>Quantidade de Torcedores Execelente</h4>
+                    <h2>De 30 a 40</h2>
+                </div>
+            </div>
 
-        <div class="dash">
             <div class="btns-dash">
                 <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Torcida dos Campeões</button>
             </div>
@@ -57,7 +73,6 @@
             </div>
         </div>
     </div>
-
 
 </body>
 
@@ -134,23 +149,16 @@
                     fill: true,
                     data: []
                 },
-                // {
-                //     yAxisID: 'y-temperatura',
-                //     label: 'Temperatura',
-                //     borderColor: 'white',
-                //     backgroundColor: 'white',
-                //     fill: true,
-                //     data: []
-                // }
             ]
         };
 
         // Cumprindo requisito de repetição
 
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
+        for (p = 0; p < resposta.length; p++) {
+            var registro = resposta[p];
             dados.labels.push(registro.nomeTime);
             dados.datasets[0].data.push(registro.Quantidade_de_Votos);
+            // 
         }
 
         console.log(JSON.stringify(dados));
@@ -175,7 +183,7 @@
                         id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 50,
+                            max: 25,
                             min: 0
                         }
                     }, {
@@ -185,7 +193,7 @@
                         id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 50,
+                            max: 25,
                             min: 0
                         },
 
