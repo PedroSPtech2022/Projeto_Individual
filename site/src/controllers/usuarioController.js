@@ -99,6 +99,7 @@ function cadastrar(req, res) {
     }
 }
 
+// cadastrar2 criado para inserir na tabela de TimeCoracao pois precisava desta função para separar o insert  
 
 function cadastrar2(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
@@ -130,7 +131,7 @@ function cadastrar2(req, res) {
     }
 }
 
-
+// mensagem criada para enviar os dados da aba contato para uma tabela no banco de dados 
 
 function mensagem(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html

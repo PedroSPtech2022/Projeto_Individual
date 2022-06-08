@@ -36,7 +36,19 @@ INSERT INTO usuario VALUES (NULL,'Pedro','pedro@ucl.com','pedrinho123',300,2001)
                            (NULL,'Fabio','fabo@gmail.com','123',321,2002),
                            (NULL,'Kaique','kaique@gmail.com','1234',322,2001),
                            (NULL,'Matheus do Carmo','matheus.carmo@gmail.com','matheus123',323,2000),
-                           (NULL,'Bruna','Bruna@gmail.com','1234',324,2000);
+                           (NULL,'Bruna','Bruna@gmail.com','1234',324,2000),
+                           (NULL,'Bruno','Bruno@gmail.com','1234',325,2000),
+                           (NULL,'Bruna','Bruna.Marquez@gmail.com','1234',326,2000),
+                           (NULL,'Bruna','Bruninha@gmail.com','134',327,2000),
+                           (NULL,'Junior','Junior@gmail.com','1234',328,2000),
+                           (NULL,'Breno','Breno@gmail.com','1234',329,2000),
+                           (NULL,'Gabriela','Gabriela@gmail.com','1234',330,2000),
+                           (NULL,'Brenos','Brenos@gmail.com','1234',331,2001),
+                           (NULL,'Debora','Debora@gmail.com','1234',332,2001),
+                           (NULL,'Camila','Camila@gmail.com','1234',333,2001),
+                           (NULL,'Jeferson','Jeferson@gmail.com','1234',334,2001);
+                           
+                           
                            
 SELECT * FROM usuario;
 
@@ -109,6 +121,17 @@ INSERT INTO TimeCoracao VALUES (NULL,'São Paulo'),
                                (NULL,'São Paulo'),
                                (NULL,'São Paulo'),
                                (NULL,'Corinthians'),
-                               (NULL,'Corinthians');
+                               (NULL,'Corinthians'),
+                               (NULL,'São Paulo'),
+                               (NULL,'São Paulo'),
+                               (NULL,'São Paulo'),
+                               (NULL,'São Paulo'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Flamengo'),
+                               (NULL,'Santos'),
+                               (NULL,'Santos');
+                               
                                
 SELECT * FROM TimeCoracao;                           

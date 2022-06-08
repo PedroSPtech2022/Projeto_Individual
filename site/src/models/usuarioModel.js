@@ -30,6 +30,8 @@ function cadastrar(nome, email, senha, nomeTIMEF, select) {
     return database.executar(instrucao);
 }
 
+// cadastrar2 criado para inserir os dados abaixo na tabela do banco do relacionamento 1-1
+
 function cadastrar2(nomeTIMEF,nome) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",nomeTIMEF, nome);
     
@@ -40,6 +42,7 @@ function cadastrar2(nomeTIMEF,nome) {
     return database.executar(instrucao);
 }
 
+// mensagem criada para fazer o insert no banco de dados de acordo o comando especificado abaixo 
 
 function mensagem(nome, email, mensagem) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, mensagem);

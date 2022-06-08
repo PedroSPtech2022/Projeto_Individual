@@ -170,7 +170,8 @@
 </html>
 
 <script>
-         //Cumprindo Requisito de uso de VAR
+
+    //Cumprindo Requisito de uso de VAR
            
     var myChart = undefined
     var CR7Var = Number(CR7.value)
@@ -202,12 +203,14 @@
     // Cumprindo requisito do uso de Vetor
 
     var votos = [CR7Var, DISTEFVar, MALDINIVar, SERGIOVar, MESSIVar, BENZEMAVar, CASILLASVar, ZIDANEVar, BRUXOVar, LEWANDOWSKIVar]
-// acrescentar for e realizar o relacionamento um pra um com time do coração 
+
     // Cumprindo o requisito de uso de função
 
     function confirmarVoto(){
 
         // Cumprindo requisito de calculo matemático 
+        // Pegamos o valor do id CR7 e usamos o .checked para certificar qual opção vamos somar valor.  indicando a opção de acordo com o if vamos somar o votos na posição [0] do nosso vetor + 1 para adicionar o voto na nossa dashboard.
+
         if(CR7.checked){
            votos[0] = votos[0] + 1
         }
@@ -240,6 +243,9 @@
         }
     
     }
+
+     // Cumprindo o requisito de uso de função
+     // função criar para a dashborad ser criada logo em seguida ao carregar a pagina, com um if com uma função de myChart.destroy caso a dashboard precise ser recarregada. 
 
     function criar() {
 

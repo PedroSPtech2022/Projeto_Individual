@@ -15,6 +15,8 @@ router.get("/listar", function (req, res) {
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
+
+// rota criada para redirecionar os dados do cadastro para a funcao cadastrar2 da usuarioController.js
 router.post("/cadastrar2", function (req, res) {
     usuarioController.cadastrar2(req, res);
 })
@@ -23,6 +25,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+// rota criada para redirecionar os dados do cadastro para a funcao mensagem da usuarioController.js
 router.post("/mensagem", function (req, res) {
     usuarioController.mensagem(req, res);
 })
