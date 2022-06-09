@@ -52,7 +52,7 @@
                 </div>
                 <div class="item-regua ideal">
                     <h4>Quantidade de Torcedores Média</h4>
-                    <h2>De 20 a 29</h2>
+                    <h2>De 16 a 29</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Quantidade de Torcedores Execelente</h4>
@@ -143,9 +143,9 @@
             datasets: [
                 {
                     yAxisID: 'y-Votos',
-                    label: 'Votos',
+                    label: 'Torcedores',
                     borderColor: 'white',
-                    backgroundColor: 'blue',
+                    backgroundColor: [],
                     fill: true,
                     data: []
                 },
@@ -154,11 +154,22 @@
 
         // Cumprindo requisito de repetição
         // usando for para adicionar valores de acordo com os pushs abaixo puxando o select denominado de Quantidade_de_Votos
-        for (p = 0; p < resposta.length; p++) {
-            var registro = resposta[p];
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
             dados.labels.push(registro.nomeTime);
             dados.datasets[0].data.push(registro.Quantidade_de_Votos);
-            // 
+
+            // let criado para guardar um futuro valor, usando if e else if para mudar a cor de acordo com a quantidade de dados puxados durante o push do grafico
+
+            let cor = '';
+            if(registro.Quantidade_de_Votos <= 15){
+                cor = 'red';
+            } else if (registro.Quantidade_de_Votos >= 16 && registro.Quantidade_de_Votos <= 29){
+                cor = 'green';
+            } else if (registro.Quantidade_de_Votos >= 30){
+                cor = 'blue';
+            }
+            dados.datasets[0].backgroundColor.push(cor);
         }
 
         console.log(JSON.stringify(dados));
@@ -183,7 +194,7 @@
                         id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 25,
+                            max: 40,
                             min: 0
                         }
                     }, {
@@ -193,7 +204,7 @@
                         id: 'y-Votos',
                         ticks: {
                             beginAtZero: true,
-                            max: 25,
+                            max: 40,
                             min: 0
                         },
 
