@@ -22,22 +22,21 @@ INSERT INTO Decks VALUES (NULL,'Monstro Normal'),
                          (NULL,'Herois Elementares'),
                          (NULL,'Monstros do Submundo'),
                          (NULL,'Exodia');
-                         
-SELECT * FROM Decks;
 
 CREATE TABLE Decks_Duelista(
 fkDuelista INT,
 FOREIGN KEY (fkDuelista) REFERENCES Duelistas (idDuelista),
 fkDecks INT,
 FOREIGN KEY (fkDecks) REFERENCES Decks (idDeck),
-quantidadeDecks CHAR (1)
+quantidade_decks INT,
+PRIMARY KEY (fkDuelista, fkDecks, quantidade_decks)
 );	
 
-INSERT INTO Decks_Duelista VALUES(1000,1,'2'),
-                                 (1000,5,'2'),
-                                 (1001,2,'1'),
-                                 (1002,3,'1'),
-                                 (1003,4,'1');
+INSERT INTO Decks_Duelista VALUES(1000,1,2),
+                                 (1000,5,2),
+                                 (1001,2,1),
+                                 (1002,3,1),
+                                 (1003,4,1);
 SELECT * FROM Decks_Duelista;
 
 CREATE TABLE Monstros (
@@ -51,6 +50,22 @@ CREATE TABLE Monstros (
  EfeitoESP VARCHAR (300)
 );
 
+CREATE TABLE Deck_Raro (
+ idMonstro INT PRIMARY KEY AUTO_INCREMENT,
+ nomeMonstro VARCHAR (45),
+ PoderATK DECIMAL (8,2),
+ PoderDEF DECIMAL (8,2),
+ EfeitoESP VARCHAR (300),
+ fkDuelista INT,
+ FOREIGN KEY (fkDuelista) REFERENCES Duelistas (idDuelista)
+)AUTO_INCREMENT = 100;
+
+INSERT INTO Deck_Raro VALUES (NULL,'Exodia Braço Direito','200','300','NOT',1000),
+                            (NULL,'Exodia Braço Esquerdo','200','300','NOT',1000),
+                            (NULL,'Exodia Perna Direita','200','300','NOT',1000),
+                            (NULL,'Exodia Perna Esquerda','200','300','NOT',1000),
+                            (NULL,'Exodia Cabeça','1000','1000','Chama todas as partes pro campo dando um poder Infinito',1000);
+                            
 INSERT INTO Monstros VALUES (1,10,'Mago Negro','2500','2100','NOT'),
                             (1,11,'Cavaleiro Gaia','2300','2100','NOT'),
                             (1,12,'Kuriboh','300','200','Se descartada durante ataque inimigo não sofre dano'),
@@ -58,31 +73,23 @@ INSERT INTO Monstros VALUES (1,10,'Mago Negro','2500','2100','NOT'),
                             (1,14,'Rei Caveira','2500','1200','NOT'),
                             (1,15,'Castor Guerreiro','1200','1500','NOT');
                             
-INSERT INTO Monstros VALUES (2,16,'Dragão de Olhos Azuis','3000','2500','NOT'),
-						    (2,17,'Canhão X','1800','1500','NOT'),
-                            (2,18,'Senhor dos Dragões','1200','1200','Monstros tipo dragão não podem atacar o senhor deles'),
-                            (2,19,'Senhor dos Vampiros','2000','1500','Descartando uma carta do tipo magia o senhor pode atacar 2 vezes no turno'),
-                            (2,20,'Dragão da Nevasca','1800','1000','NOT');
+INSERT INTO Monstros VALUES (2,10,'Dragão de Olhos Azuis','3000','2500','NOT'),
+						    (2,11,'Canhão X','1800','1500','NOT'),
+                            (2,12,'Senhor dos Dragões','1200','1200','Monstros tipo dragão não podem atacar o senhor deles'),
+                            (2,13,'Senhor dos Vampiros','2000','1500','Descartando uma carta do tipo magia o senhor pode atacar 2 vezes no turno'),
+                            (2,14,'Dragão da Nevasca','1800','1000','NOT');
                             
-INSERT INTO Monstros VALUES (3,21,'Heroi Elemental Avian','1000','1000','NOT'),
-                            (3,22,'Heroi Elemental Burtinatrix','1200','800','NOT'),
-                            (3,23,'Heroi Elemental Homen Bolha','800','1200','NOT'),
-                            (3,24,'Heroi Elemental Criança','300','600','Pode evoluir para um heroi mais velho'),
-                            (3,25,'Fusão Heroi AvianBurn','2100','1200','So pode ser invocado com fusao do avian e a burtinatrix, poder aumenta de acordo a quantidade de monstros invocados'),
-                            (3,26,'Kuriboh Voador','300','200','Não sofre dano ao descartar ela no turno');
+INSERT INTO Monstros VALUES (3,10,'Heroi Elemental Avian','1000','1000','NOT'),
+                            (3,11,'Heroi Elemental Burtinatrix','1200','800','NOT'),
+                            (3,12,'Heroi Elemental Homen Bolha','800','1200','NOT'),
+                            (3,13,'Heroi Elemental Criança','300','600','Pode evoluir para um heroi mais velho'),
+                            (3,14,'Fusão Heroi AvianBurn','2100','1200','So pode ser invocado com fusao do avian e a burtinatrix, poder aumenta de acordo a quantidade de monstros invocados'),
+                            (3,15,'Kuriboh Voador','300','200','Não sofre dano ao descartar ela no turno');
 
-INSERT INTO Monstros VALUES (4,27,'Ryu-Ran','2200','2600','NOT'),
-							(4,28,'Ilusionista sem Rosto','1200','2200','NOT'),
-                            (4,29,'Boneca Mistica','1600','1000','NOT'),
-                            (4,30,'Aligator de Desenho','800','1600','NOT');
-                            
-INSERT INTO Monstros VALUES (5,31,'Exodia Braço Direito','200','300','NOT'),
-                            (5,32,'Exodia Braço Esquerdo','200','300','NOT'),
-                            (5,33,'Exodia Perna Direita','200','300','NOT'),
-                            (5,34,'Exodia Perna Esquerda','200','300','NOT'),
-                            (5,35,'Exodia Cabeça','1000','1000','Chama todas as partes pro campo dando um poder Infinito');
-                            
-SELECT * FROM Monstros;                            
+INSERT INTO Monstros VALUES (4,10,'Ryu-Ran','2200','2600','NOT'),
+							(4,11,'Ilusionista sem Rosto','1200','2200','NOT'),
+                            (4,12,'Boneca Mistica','1600','1000','NOT'),
+                            (4,13,'Aligator de Desenho','800','1600','NOT');
                             
 CREATE TABLE CartasEspeciais(
  idCartasESP INT PRIMARY KEY AUTO_INCREMENT,
@@ -111,6 +118,3 @@ INSERT INTO CartasEspeciais VALUES (NULL,'Pote da Ganância','n','s','Duelista t
                                    (NULL,'Buraco Negro','n','s','Todos os montros em campo são destruidos',5),
                                    (NULL,'Pote da Ganância','n','s','Duelista tem direito a puxar mais 2 cartas do deck',5),
                                    (NULL,'Wabuko','s','n','Quando ativada invocador não toma dano e não tem monstros destruidos',5);
-                                   
-                                   
-SELECT * FROM CartasEspeciais;                                   
