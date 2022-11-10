@@ -112,6 +112,16 @@ function buscarPlacaMae(fkTorre) {
     return database.executar(instrucaoSql);
 }
 
+function buscarDesempenho(fkTorre) {
+    
+    instrucaoSql = ''
+    
+    instrucaoSql = `select top 7 Leitura as 'Desempenho' from Leitura where fkTorre = ${fkTorre} and fkComponente = 24 ORDER BY idLeitura DESC`;
+        
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function buscarRegistro(fkTorre, nmrComponentes) {
     
     instrucaoSql = ''
@@ -131,6 +141,7 @@ module.exports = {
     buscarPorcentagemPercaPacotes,
     buscarTemperatura,
     buscarPlacaMae,
+    buscarDesempenho,
     buscarDataHora,
     buscarRegistro
     

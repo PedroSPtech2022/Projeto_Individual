@@ -35,6 +35,10 @@ router.get("/PlacaMae/:fkTorre", function (req, res) {
     medidaController.buscarPlacaMae(req, res);
 })
 
+router.get("/Desempenho/:fkTorre", function (req, res) {
+    medidaController.buscarPlacaMae(req, res);
+})
+
 router.get("/DataHora/:fkTorre", function (req, res) {
     medidaController.buscarDataHora(req, res);
 })

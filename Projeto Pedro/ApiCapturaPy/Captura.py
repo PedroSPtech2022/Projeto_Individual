@@ -163,7 +163,8 @@ data = psutil.sensors_temperatures()
 core = data['coretemp']
 item = core[0]
 global tempcpu
-tempcpu = item.current 
+tempcpu = item.current
+perdaDese = 3.5 
 
 def teste():
         print("Inserindo leitura no banco...")
@@ -184,7 +185,7 @@ def teste():
             var_leitura2 = numpy.mean(var_leitura) 
         elif strNome == 'temperatura':
             print('caiu no elif 3')
-            var_leitura2 = (var_leitura)          
+            var_leitura2 = (var_leitura)              
         else:
             print('caiu no else')
             var_leitura2 = var_leitura
@@ -199,10 +200,28 @@ def teste():
             # Commit de mudanças no banco de dados
             crsr.commit()
             print("Leitura inserida no banco")
+        except pyodbc.Error as err:
+            cnxn.rollback()
+            print("Something went wrong: {}".format(err))
+
+        if strNome == 'temperatura':
+            if (var_leitura2 > 70):
+                var_leitura2 = var_leitura
+        try:
+            # Executando comando SQL   
+            crsr.execute('''
+        INSERT INTO Leitura (Leitura, DataHora, fkTorre, fkComponente) VALUES (?, ?, ?, ?)
+        ''',var_leitura2, datahora, idTorre , 24)
+            # Commit de mudanças no banco de dados
+            crsr.commit()
+            print("Leitura inserida no banco")
 
         except pyodbc.Error as err:
             cnxn.rollback()
             print("Something went wrong: {}".format(err))
+        else:
+            cnxn.rollback()
+            print("Something went wrong: {}".format(err))     
 
             
 

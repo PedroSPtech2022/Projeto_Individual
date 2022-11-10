@@ -370,7 +370,8 @@
       ObterPorcentagemCPU(sessionStorage.ID_TORRE),
       ObterPorcentagemDisco(sessionStorage.ID_TORRE),
       ObterTemperatura(sessionStorage.ID_TORRE),
-      ObterPlacaMae(sessionStorage.ID_TORRE)
+      ObterPlacaMae(sessionStorage.ID_TORRE),
+      ObterDesempenho(sessionStorage.ID_TORRE)
       , 2000);
     setTimeout(() => AparecerGraficos(vetor_Componentes, fkTorre), 3000);
 
@@ -396,6 +397,9 @@
       }  else if (element == 23) {
         lista.innerHTML += `<div class="CardGrafico"><h4 style="margin-top: 10px; margin-bottom: 0px;">Temperatura da Placa Mãe</h4><canvas style="width: 100%; display: block;" id="myChartPUM"></canvas></div>`
         setTimeout(() => PlotarGrafico(vetor_PlacaMae, sessionStorage.ID_TORRE, 'myChartPUM', 'Temperatura em Celsius'), 2000);
+      } else if (element == 24) {
+        lista.innerHTML += `<div class="CardGrafico"><h4 style="margin-top: 10px; margin-bottom: 0px;">Desempenho CPU</h4><canvas style="width: 100%; display: block;" id="myChartDese"></canvas></div>`
+        setTimeout(() => PlotarGrafico(vetor_PercaDesem, sessionStorage.ID_TORRE, 'myChartDese', 'Perca de Desempenho em %'), 2000);
       }
     });
   }
@@ -409,6 +413,7 @@
   var vetor_leituras = []
   var vetor_Temperatura = []
   var vetor_PlacaMae = []
+  var vetor_PercaDesem= []
 
   function ObterDataHora(fkTorre) {
     fetch(`/medidas/DataHora/${fkTorre}`, { cache: 'no-store' }).then(function (response) {
@@ -569,6 +574,29 @@
       });
   }
 
+  function ObterDesempenho(fkTorre) {
+    fetch(`/medidas/Desempenho/${fkTorre}`, { cache: 'no-store' }).then(function (response) {
+      metrica = 49
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+          console.log(resposta)
+          resposta.forEach(element => {
+            vetor_PercaDesem.push(element.Desempenho)
+          });
+
+          // PlotarGrafico(resposta, fkTorre);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
   function PlotarGrafico(vetor, fkTorre, idCanva, label) {
     var fkComponenteVar = 0
     if (idCanva == 'myChartPUC') {
@@ -583,7 +611,9 @@
       fkComponenteVar = 22
     } else if (idCanva == 'myChartPUM') {
       fkComponenteVar = 23
-    }
+    } else if (idCanva == 'myChartDese') {
+      fkComponenteVar = 24
+    } 
 
     for (i = 0; i < vetor.length; i++) {
       vetor_leituras.push({ DataHora: vetor_DataHora[i], Leitura: vetor[i] })
@@ -704,6 +734,10 @@
 
             if (fkComponente == 23) {
               verificarPlacaMae(metrica)
+            }
+
+            if (fkComponente == 24) {
+              perdendoDesempenho(metrica)
             }
           }
 
@@ -828,5 +862,16 @@
     }
   }
 
+  function perdendoDesempenho(metrica){
+
+    var frase = ""   
+    // incluir uma nova medida de temperatura  
+    if (metrica > 3.5){
+      frase = "Alerta: Perca de Desempenho Consideravel !"
+      console.log('Cheguei aqui')
+      alertas(nome, "Desempenho CPU", metrica, frase)
+    }
+  }    
+  
 </script>
 
