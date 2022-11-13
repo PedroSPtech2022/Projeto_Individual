@@ -164,17 +164,19 @@ core = data['coretemp']
 item = core[0]
 global tempcpu
 tempcpu = item.current
-perdaDese = 3.5 
+
 
 def teste():
         print("Inserindo leitura no banco...")
         datahora = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
         print(datahora)
         exec(strNome + " = " + strCodigo, globals())
+        global var_leitura
         var_leitura = globals()[strNome]
         if strNome == 'processadores_nucleo_porcentagem':
             
             print(var_leitura)
+            global var_leitura2
             var_leitura2 = mean(var_leitura)
             print(var_leitura2)
         elif strNome == 'pacotes_perdidos_porcentagem':
@@ -185,7 +187,8 @@ def teste():
             var_leitura2 = numpy.mean(var_leitura) 
         elif strNome == 'temperatura':
             print('caiu no elif 3')
-            var_leitura2 = (var_leitura)              
+            var_leitura2 = (var_leitura)  
+            teste2()            
         else:
             print('caiu no else')
             var_leitura2 = var_leitura
@@ -201,29 +204,31 @@ def teste():
             crsr.commit()
             print("Leitura inserida no banco")
         except pyodbc.Error as err:
-            cnxn.rollback()
+            crsr.rollback()
             print("Something went wrong: {}".format(err))
 
-        if strNome == 'temperatura':
-            if (var_leitura2 > 70):
-                var_leitura2 = var_leitura
+
+def teste2():
+        print("Inserindo leitura no banco...")
+        datahora = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        print(datahora)
+
+        if (var_leitura > 55 & var_leitura < 64 | var_leitura2 > 55 & var_leitura2 < 64):
+            var_leitura2 = 3.5
+        elif(var_leitura >= 65 | var_leitura2 >= 65):
+            var_leitura2 = 7.0    
         try:
             # Executando comando SQL   
             crsr.execute('''
         INSERT INTO Leitura (Leitura, DataHora, fkTorre, fkComponente) VALUES (?, ?, ?, ?)
-        ''',var_leitura2, datahora, idTorre , 24)
+        ''',var_leitura2, datahora, 136 , 24)
             # Commit de mudanças no banco de dados
             crsr.commit()
             print("Leitura inserida no banco")
-
         except pyodbc.Error as err:
-            cnxn.rollback()
+            crsr.rollback()
             print("Something went wrong: {}".format(err))
-        else:
-            cnxn.rollback()
-            print("Something went wrong: {}".format(err))     
 
-            
 
 def InserindoLeitura():
     # PEGAR fkCOMPONENTE

@@ -844,7 +844,7 @@
       alertas(nome, "CPU", metrica, frase)
     } else if (metrica >= 70) {
       frase = "Perigo: Temperatura Critica! Temperatura: "
-      alertas(nome, "CPU", metrica, frase)
+      alertas(nome, "Temperatura", metrica, frase)
     }
   }
 
@@ -858,7 +858,7 @@
       alertas(nome, "Placa Mãe", metrica, frase)
     } else if (metrica >= 61) {
       frase = "Perigo: Temperatura Critica! Temperatura: "
-      alertas(nome, "Placa Mãe", metrica, frase)
+      alertas(nome, "PlacaMae", metrica, frase)
     }
   }
 
@@ -866,10 +866,13 @@
 
     var frase = ""   
     // incluir uma nova medida de temperatura  
-    if (metrica > 3.5){
+    if (metrica > 3.5 && metrica < 6.9){
       frase = "Alerta: Perca de Desempenho Consideravel !"
       console.log('Cheguei aqui')
       alertas(nome, "Desempenho CPU", metrica, frase)
+    } else if (metrica > 7.0) {
+      frase = "Perigo: Perca de Desempenho Critica!"
+      alertas(nome, "Desempenho", metrica, frase)
     }
   }    
   
